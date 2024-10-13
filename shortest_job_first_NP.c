@@ -8,7 +8,7 @@ void findSJF(struct Process proc[], int n)
 {
     int completed = 0, currentTime = 0;
     float total_wt = 0, total_tat = 0;
-    int isCompleted[n]; // Array to mark completed processes
+    int isCompleted[n];
     printf("\nGantt Chart : ");
     for (int i = 0; i < n; i++)
     {
@@ -42,7 +42,7 @@ void findSJF(struct Process proc[], int n)
         {
             proc[shortest].waitingTime = 0;
         }
-        isCompleted[shortest] = 1; // Mark the process as completed
+        isCompleted[shortest] = 1;
         completed++;
     }
     printf("\nAverage Waiting Time: %.2f\n", total_wt / n);
@@ -73,7 +73,7 @@ int main()
     printf("Enter Process Arrival Times and Burst Times\n");
     for (int i = 0; i < n; i++)
     {
-        proc[i].pid = i + 1; // Assigning process ID based on input order
+        proc[i].pid = i + 1;
         printf("Process %d - Arrival Time and Burst Time: ", i + 1);
         scanf("%d %d", &proc[i].arrivalTime, &proc[i].burstTime);
     }
